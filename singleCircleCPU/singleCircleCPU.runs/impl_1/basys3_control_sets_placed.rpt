@@ -1,0 +1,147 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Fri Nov 30 07:50:46 2018
+| Host         : LAPTOP-KAMAF0QO running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file basys3_control_sets_placed.rpt
+| Design       : basys3
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    94 |
+| Minimum Number of register sites lost to control set restrictions |    28 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |            1057 |          474 |
+| No           | No                    | Yes                    |              35 |            7 |
+| No           | Yes                   | No                     |              21 |            6 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              14 |            4 |
+| Yes          | Yes                   | No                     |               5 |            2 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------+--------------------------------+------------------+------------------+----------------+
+|            Clock Signal           |          Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-----------------------------------+--------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG                    |                                |                  |                1 |              1 |
+|  cd/clk_sys                       |                                | cd/SR[0]         |                1 |              3 |
+|  my_ct/E[0]                       |                                | cd/SR[0]         |                1 |              4 |
+|  clk_IBUF_BUFG                    | my_ct/FSM_onehot_AN[4]_i_1_n_0 | cd/SR[0]         |                2 |              5 |
+|  my_key/myCLK                     | my_SCPU/pc/PCWre               | cd/SR[0]         |                2 |              7 |
+|  my_key/myCLK                     | my_SCPU/pc/address[7]_i_1_n_0  | cd/SR[0]         |                2 |              7 |
+|  my_SCPU/pc/address_reg[1]_100[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_102[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_64[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_67[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_107[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_109[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_69[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_112[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_72[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_116[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_118[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_75[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_121[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_123[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_77[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_126[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_80[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_129[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_83[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_132[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_134[0] |                                |                  |                2 |              8 |
+|  my_SCPU/pc/address_reg[1]_86[0]  |                                |                  |                2 |              8 |
+|  my_SCPU/pc/address_reg[1]_137[0] |                                |                  |                2 |              8 |
+|  my_SCPU/pc/address_reg[1]_88[0]  |                                |                  |                6 |              8 |
+|  my_SCPU/pc/address_reg[1]_140[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_142[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_91[0]  |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_145[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_147[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_95[0]  |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_150[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_152[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_155[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_158[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_160[0] |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_163[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_165[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_168[0] |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_170[0] |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_173[0] |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_175[0] |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_52[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_178[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_180[0] |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_183[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_185[0] |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_188[0] |                                |                  |                3 |              8 |
+|  my_SCPU/pc/address_reg[1]_49[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_50[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_51[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_53[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_59[0]  |                                |                  |                5 |              8 |
+|  my_SCPU/pc/address_reg[1]_62[0]  |                                |                  |                4 |              8 |
+|  my_SCPU/pc/address_reg[1]_148[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_105[0] |                                |                  |                6 |             16 |
+|  my_SCPU/pc/address_reg[1]_110[0] |                                |                  |                6 |             16 |
+|  my_SCPU/pc/address_reg[1]_114[0] |                                |                  |                8 |             16 |
+|  my_SCPU/pc/address_reg[1]_119[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_176[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_181[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_130[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_65[0]  |                                |                  |                9 |             16 |
+|  my_SCPU/pc/address_reg[1]_138[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_143[0] |                                |                  |                6 |             16 |
+|  my_SCPU/pc/address_reg[1]_84[0]  |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_186[0] |                                |                  |                8 |             16 |
+|  my_SCPU/pc/address_reg[1]_89[0]  |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_60[0]  |                                |                  |                6 |             16 |
+|  my_SCPU/pc/address_reg[1]_73[0]  |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_98[0]  |                                |                  |                6 |             16 |
+|  my_SCPU/pc/address_reg[1]_171[0] |                                |                  |                6 |             16 |
+|  my_SCPU/pc/address_reg[1]_166[0] |                                |                  |                5 |             16 |
+|  my_SCPU/pc/address_reg[1]_161[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_156[0] |                                |                  |                7 |             16 |
+|  my_SCPU/pc/address_reg[1]_127[0] |                                |                  |               10 |             24 |
+|  my_SCPU/pc/address_reg[1]_135[0] |                                |                  |                9 |             24 |
+|  my_SCPU/pc/address_reg[1]_93[0]  |                                |                  |                9 |             24 |
+|  my_SCPU/pc/address_reg[1]_78[0]  |                                |                  |                9 |             24 |
+|  my_SCPU/pc/address_reg[1]_96[0]  |                                |                  |               10 |             24 |
+|  my_SCPU/pc/address_reg[1]_81[0]  |                                |                  |               10 |             24 |
+|  my_SCPU/pc/address_reg[1]_57[0]  |                                |                  |               11 |             24 |
+|  my_SCPU/pc/address_reg[1]_103[0] |                                |                  |               11 |             24 |
+|  my_SCPU/pc/address_reg[1]_124[0] |                                |                  |               10 |             24 |
+|  my_SCPU/pc/address_reg[1]_70[0]  |                                |                  |               11 |             24 |
+|  my_SCPU/pc/address_reg[1]_153[0] |                                |                  |               13 |             24 |
+|  mRD                              |                                |                  |               16 |             32 |
+|  clk_IBUF_BUFG                    |                                | cd/SR[0]         |               11 |             49 |
+|  my_key_n_0_BUFG                  | my_SCPU/pc/p_0_in              |                  |               12 |             96 |
++-----------------------------------+--------------------------------+------------------+------------------+----------------+
+
+

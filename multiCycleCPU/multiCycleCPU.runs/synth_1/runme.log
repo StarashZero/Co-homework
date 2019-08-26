@@ -1,0 +1,786 @@
+
+*** Running vivado
+    with args -log basys3.vds -m64 -mode batch -messageDb vivado.pb -notrace -source basys3.tcl
+
+WARNING: Default location for XILINX_VIVADO_HLS not found: 
+
+****** Vivado v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source basys3.tcl -notrace
+Command: synth_design -top basys3 -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-1223] The version limit for your license is '2017.03' and will expire in -629 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+WARNING: [Synth 8-2611] redeclaration of ansi port instruction is not allowed [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/instructionMemory.v:30]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 260.375 ; gain = 53.449
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'basys3' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/basys3.v:23]
+INFO: [Synth 8-638] synthesizing module 'multiCycleCPU' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/multiCycleCPU.v:23]
+INFO: [Synth 8-638] synthesizing module 'controlUnit' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlUnit.v:23]
+INFO: [Synth 8-638] synthesizing module 'changeState' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/changeState.v:23]
+	Parameter IF bound to: 3'b000 
+	Parameter ID bound to: 3'b001 
+	Parameter EXE1 bound to: 3'b110 
+	Parameter EXE2 bound to: 3'b101 
+	Parameter EXE3 bound to: 3'b010 
+	Parameter WB1 bound to: 3'b111 
+	Parameter WB2 bound to: 3'b100 
+	Parameter MEM bound to: 3'b011 
+INFO: [Synth 8-256] done synthesizing module 'changeState' (1#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/changeState.v:23]
+INFO: [Synth 8-638] synthesizing module 'controlSign' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:23]
+	Parameter IF bound to: 3'b000 
+	Parameter ID bound to: 3'b001 
+	Parameter EXE1 bound to: 3'b110 
+	Parameter EXE2 bound to: 3'b101 
+	Parameter EXE3 bound to: 3'b010 
+	Parameter WB1 bound to: 3'b111 
+	Parameter WB2 bound to: 3'b100 
+	Parameter MEM bound to: 3'b011 
+WARNING: [Synth 8-567] referenced signal 'opCode' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:51]
+WARNING: [Synth 8-567] referenced signal 'zero' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:51]
+WARNING: [Synth 8-567] referenced signal 'sign' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:51]
+INFO: [Synth 8-256] done synthesizing module 'controlSign' (2#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:23]
+INFO: [Synth 8-256] done synthesizing module 'controlUnit' (3#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlUnit.v:23]
+INFO: [Synth 8-638] synthesizing module 'PC' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/PC.v:22]
+INFO: [Synth 8-256] done synthesizing module 'PC' (4#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/PC.v:22]
+INFO: [Synth 8-638] synthesizing module 'instructionMemory' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/instructionMemory.v:23]
+INFO: [Synth 8-3876] $readmem data file 'E:/Xlink/VivadoProject/multiCycleCPU/instructions.txt' is read successfully [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/instructionMemory.v:32]
+INFO: [Synth 8-256] done synthesizing module 'instructionMemory' (5#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/instructionMemory.v:23]
+INFO: [Synth 8-638] synthesizing module 'IR' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/IR.v:23]
+INFO: [Synth 8-256] done synthesizing module 'IR' (6#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/IR.v:23]
+INFO: [Synth 8-638] synthesizing module 'mux3to1' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux3to1.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux3to1.v:32]
+INFO: [Synth 8-256] done synthesizing module 'mux3to1' (7#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux3to1.v:23]
+INFO: [Synth 8-638] synthesizing module 'registerFile' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/registerFile.v:23]
+INFO: [Synth 8-256] done synthesizing module 'registerFile' (8#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/registerFile.v:23]
+INFO: [Synth 8-638] synthesizing module 'DR' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/DR.v:23]
+INFO: [Synth 8-256] done synthesizing module 'DR' (9#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/DR.v:23]
+INFO: [Synth 8-638] synthesizing module 'mux2to1' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux2to1.v:23]
+INFO: [Synth 8-256] done synthesizing module 'mux2to1' (10#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux2to1.v:23]
+WARNING: [Synth 8-689] width (27) of port connection 'in2' does not match port width (32) of module 'mux2to1' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/multiCycleCPU.v:48]
+INFO: [Synth 8-638] synthesizing module 'ALU' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-226] default block is never used [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/ALU.v:33]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (11#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-638] synthesizing module 'mux' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux.v:23]
+WARNING: [Synth 8-567] referenced signal 'sign' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux.v:31]
+INFO: [Synth 8-256] done synthesizing module 'mux' (12#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux.v:23]
+INFO: [Synth 8-638] synthesizing module 'dataMemory' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:23]
+WARNING: [Synth 8-567] referenced signal 'DAddr' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:38]
+WARNING: [Synth 8-567] referenced signal 'memory' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:38]
+INFO: [Synth 8-256] done synthesizing module 'dataMemory' (13#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:23]
+INFO: [Synth 8-638] synthesizing module 'signZeroExtend' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/signZeroExtend.v:23]
+INFO: [Synth 8-256] done synthesizing module 'signZeroExtend' (14#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/signZeroExtend.v:23]
+INFO: [Synth 8-256] done synthesizing module 'multiCycleCPU' (15#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/multiCycleCPU.v:23]
+INFO: [Synth 8-638] synthesizing module 'clock_div' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/clock_div.v:23]
+	Parameter limit bound to: 100000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_div' (16#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/clock_div.v:23]
+INFO: [Synth 8-638] synthesizing module 'key' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/key.v:23]
+INFO: [Synth 8-256] done synthesizing module 'key' (17#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/key.v:23]
+INFO: [Synth 8-638] synthesizing module 'counter' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/counter.v:23]
+	Parameter limit bound to: 100000 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/counter.v:45]
+INFO: [Synth 8-256] done synthesizing module 'counter' (18#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/counter.v:23]
+INFO: [Synth 8-638] synthesizing module 'SegLED' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/SegLED.v:23]
+INFO: [Synth 8-226] default block is never used [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/SegLED.v:28]
+INFO: [Synth 8-256] done synthesizing module 'SegLED' (19#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/SegLED.v:23]
+INFO: [Synth 8-638] synthesizing module 'change' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:44]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:52]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:60]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:68]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:42]
+WARNING: [Synth 8-567] referenced signal 'Reset' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'AN' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'SW' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'newPC' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'regRs' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'regRt' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'writeData' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'curPC' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'instruction' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+WARNING: [Synth 8-567] referenced signal 'aluResult' should be on the sensitivity list [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:38]
+INFO: [Synth 8-256] done synthesizing module 'change' (20#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/change.v:23]
+WARNING: [Synth 8-689] width (2) of port connection 'SW' does not match port width (3) of module 'change' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/basys3.v:48]
+INFO: [Synth 8-256] done synthesizing module 'basys3' (21#1) [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/basys3.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 300.410 ; gain = 93.484
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 300.410 ; gain = 93.484
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/constrs_1/new/basys3.xdc]
+Finished Parsing XDC File [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/constrs_1/new/basys3.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 607.914 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "new_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "new_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "IRWre" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "DBDataSrc0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "WrRegDSrc0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mWR0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUSrcA0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/PC.v:42]
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "zero0" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "memory_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-802] inferred FSM for state register 'AN_reg' in module 'counter'
+INFO: [Synth 8-5544] ROM "AN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcA_reg' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:66]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcB_reg' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:67]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUOp_reg' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/controlSign.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/mux3to1.v:33]
+WARNING: [Synth 8-327] inferring latch for variable 'DataOut_reg' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:41]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[0]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[1]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[2]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[3]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[4]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[5]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[6]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[7]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[8]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[9]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[10]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[11]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[12]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[13]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[14]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[15]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[16]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[17]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[18]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[19]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[20]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[21]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[22]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[23]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[24]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[25]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[26]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[27]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[28]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[29]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[30]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[31]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[32]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[33]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[34]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[35]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[36]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[37]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[38]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[39]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[40]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[41]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[42]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[43]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[44]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[45]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[46]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[47]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[48]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[49]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[50]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[51]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[52]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[53]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[54]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[55]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[56]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[57]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[58]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[59]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[60]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[61]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[62]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[63]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[64]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[65]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[66]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[67]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[68]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[69]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[70]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[71]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[72]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[73]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[74]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[75]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[76]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[77]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[78]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[79]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[80]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[81]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[82]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[83]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[84]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[85]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[86]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[87]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[88]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[89]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[90]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[91]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[92]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[93]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[94]' [E:/Xlink/VivadoProject/multiCycleCPU/multiCycleCPU.srcs/sources_1/new/dataMemory.v:48]
+INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE3 |                            00001 |                             0000
+                 iSTATE2 |                            00010 |                             0111
+                  iSTATE |                            00100 |                             1110
+                 iSTATE0 |                            01000 |                             1101
+                 iSTATE1 |                            10000 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'AN_reg' using encoding 'one-hot' in module 'counter'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 8     
+	   4 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 7     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	             1024 Bit         RAMs := 1     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 8     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 384   
+	  16 Input      8 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 4     
+	   4 Input      3 Bit        Muxes := 2     
+	   9 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 130   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module changeState 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      3 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+Module controlSign 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 5     
+Module PC 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module instructionMemory 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     32 Bit       Adders := 1     
+Module IR 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+Module mux3to1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module registerFile 
+Detailed RTL Component Info : 
++---RAMs : 
+	             1024 Bit         RAMs := 1     
+Module DR 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module mux2to1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+Module dataMemory 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 384   
+	   5 Input      1 Bit        Muxes := 128   
+Module signZeroExtend 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module clock_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module key 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module SegLED 
+Detailed RTL Component Info : 
++---Muxes : 
+	  16 Input      8 Bit        Muxes := 1     
+Module change 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design basys3 has port Out[7] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 607.914 ; gain = 400.988
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------------+------------+---------------+----------------+
+|Module Name       | RTL Object | Depth x Width | Implemented As | 
++------------------+------------+---------------+----------------+
+|instructionMemory | rom        | 128x8         | LUT            | 
+|instructionMemory | rom__1     | 128x8         | LUT            | 
+|instructionMemory | rom__2     | 128x8         | LUT            | 
+|instructionMemory | rom__3     | 128x8         | LUT            | 
+|instructionMemory | rom        | 128x8         | LUT            | 
+|instructionMemory | rom__4     | 128x8         | LUT            | 
+|instructionMemory | rom__5     | 128x8         | LUT            | 
+|instructionMemory | rom__6     | 128x8         | LUT            | 
++------------------+------------+---------------+----------------+
+
+
+Distributed RAM: 
++------------+-------------------------+-----------+----------------------+---------------+-------------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives    | Hierarchical Name | 
++------------+-------------------------+-----------+----------------------+---------------+-------------------+
+|basys3      | my_MCPU/rf/register_reg | Implied   | 32 x 32              | RAM32M x 12   | basys3/ram__1     | 
++------------+-------------------------+-----------+----------------------+---------------+-------------------+
+
+Note: The table shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\my_MCPU/ir/rt_reg[4] )
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/aluOutDr/out_reg[31] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/aluOutDr/out_reg[30] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/rt_reg[4] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/sa_reg[2] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/rd_reg[4] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/rd_reg[3] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/rd_reg[2] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/rd_reg[0] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/rd_reg[1] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/sa_reg[0] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[6] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[7] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[8] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[9] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[10] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[15] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/sa_reg[3] ) is unused and will be removed from module basys3.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/rg/out_reg[4] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/rg/out_reg[3] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/rg/out_reg[2] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/rg/out_reg[1] ) is unused and will be removed from module basys3.
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/rg/out_reg[0] ) is unused and will be removed from module basys3.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 607.914 ; gain = 400.988
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 607.914 ; gain = 400.988
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\my_MCPU/ir/immediate_reg[5] ) is unused and will be removed from module basys3.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |    56|
+|3     |LUT1   |   110|
+|4     |LUT2   |   169|
+|5     |LUT3   |   880|
+|6     |LUT4   |   108|
+|7     |LUT5   |   166|
+|8     |LUT6   |   867|
+|9     |MUXF7  |   143|
+|10    |RAM32M |    12|
+|11    |FDCE   |    98|
+|12    |FDPE   |     4|
+|13    |FDRE   |   178|
+|14    |FDSE   |     1|
+|15    |LD     |  1067|
+|16    |LDC    |     4|
+|17    |IBUF   |     5|
+|18    |OBUF   |    12|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------+--------------+------+
+|      |Instance     |Module        |Cells |
++------+-------------+--------------+------+
+|1     |top          |              |  3883|
+|2     |  cd         |clock_div     |   112|
+|3     |  led        |SegLED        |     7|
+|4     |  my_MCPU    |multiCycleCPU |  3661|
+|5     |    adr      |DR            |    94|
+|6     |    alu      |ALU           |    34|
+|7     |    aluOutDr |DR_0          |   198|
+|8     |    bdr      |DR_1          |   817|
+|9     |    cu       |controlUnit   |   333|
+|10    |      CSi    |controlSign   |   270|
+|11    |      CSt    |changeState   |    63|
+|12    |    dbdr     |DR_2          |    32|
+|13    |    dm       |dataMemory    |  1483|
+|14    |    ir       |IR            |   352|
+|15    |    pc       |PC            |   297|
+|16    |    rf       |registerFile  |    21|
+|17    |  my_cg      |change        |     4|
+|18    |  my_ct      |counter       |    74|
+|19    |  my_key     |key           |     5|
++------+-------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 158 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 627.664 ; gain = 100.566
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 627.664 ; gain = 420.738
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1144 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 3 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1083 instances were transformed.
+  LD => LDCE: 1067 instances
+  LDC => LDCE: 4 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+178 Infos, 143 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 627.664 ; gain = 408.070
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 627.664 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 20 23:17:09 2018...

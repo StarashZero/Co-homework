@@ -1,0 +1,24 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/signZeroExtend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module signZeroExtend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/registerFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module registerFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/instructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instructionMemory
+WARNING: [VRFC 10-1315] redeclaration of ansi port instruction is not allowed [E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/instructionMemory.v:34]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/dataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataMemory
+WARNING: [VRFC 10-756] identifier memory is used before its declaration [E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/dataMemory.v:33]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/controlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sources_1/new/singleCircleCPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module singleCircleCPU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.srcs/sim_1/new/CPU_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Xlink/VivadoProject/singleCircleCPU/singleCircleCPU.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
