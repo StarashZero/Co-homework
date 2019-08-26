@@ -1,6 +1,6 @@
 # 《计算机组成原理实验》 单周期CPU  
 
-##前言  
+## 前言  
 这是中山大学2018年计算机组成原理实验中单周期CPU的实验报告，仿真与写板的内容暂略，所有源代码（包括写板）已经上传至我的github当中，欢迎大家访问。
 github个人主页: https://starashzero.github.io
 
@@ -23,24 +23,29 @@ github个人主页: https://starashzero.github.io
 000001 | rs(5 位) | rt(5 位) | rd(5 位) | reserved   
 -|-|-|-|-|
 功能：rd←rs - rt。   
-3.	addiu  rt , rs ,immediate   
+3.	addiu  rt , rs ,immediate 
+
 000010 |rs(5 位)|rt(5 位)|immediate(16 位) 
 -|-|-|-|
 功能：rt←rs + (sign-extend)immediate；immediate 符号扩展再参加“加”运算。 
  
 ==> 逻辑运算指令   
 4.	andi  rt , rs ,immediate   
+
 010000 |rs(5 位)| 	rt(5 位) 	|immediate(16 位)
 -|-|-|-| 
 功能：rt←rs & (zero-extend)immediate；immediate 做“0”扩展再参加“与”运算。   
 5.	and  rd , rs , rt 
+
 010001| 	rs(5 位)| 	rt(5 位)| 	rd(5 位)| 	reserved 
 -|-|-|-|-|
 功能：rd←rs & rt；逻辑与运算。   
 6.	ori  rt , rs ,immediate   
+
 010010 	rs(5 位) 	rt(5 位) 	immediate(16 位) 
 功能：rt←rs | (zero-extend)immediate；immediate 做“0”扩展再参加“或”运算。  
 7.	or  rd , rs , rt 
+
 010011 |	rs(5 位)| 	rt(5 位)| 	rd(5 位) |	reserved
 -|-|-|-|-|   
 
@@ -48,22 +53,26 @@ github个人主页: https://starashzero.github.io
  
 ==>移位指令   
 8.	sll  rd, rt,sa  
+
 011000|	未用|rt(5 位)|rd(5 位)|sa(5 位)|reserved 
 -|-|-|-|-|-|
 功能：rd<－rt<<(zero-extend)sa，左移 sa 位 ，(zero-extend)sa。 
  
 ==>比较指令   
-9. slti  rt, rs,immediate   带符号数 	  
+9. slti  rt, rs,immediate   带符号数 	
+
 011100| 	rs(5 位) |	rt(5 位) 	|immediate(16 位) 	
 -|-|-|-|
 功能：if (rs< (sign-extend)immediate)  rt =1 else  rt=0, 具体请看表 2 ALU 运算功能表，带符号。 
  
 ==> 存储器读/写指令   
 10. sw  rt ,immediate(rs) 写存储器 
+
 100110 |	rs(5 位)| 	rt(5 位) 	|immediate(16 位) 
 -|-|-|-|
 功能：memory[rs+ (sign-extend)immediate]←rt；immediate 符号扩展再相加。即将rt寄存器的内容保存到rs寄存器内容和立即数符号扩展后的数相加作为地址的内存单元中。   
 11. lw  rt , immediate(rs) 读存储器 
+
 100111 |	rs(5 位)| 	rt(5 位) 	|immediate(16 位)
 -|-|-|-| 
 功能：rt ← memory[rs + (sign-extend)immediate]；immediate 符号扩展再相加。 
@@ -71,23 +80,27 @@ github个人主页: https://starashzero.github.io
 保存到 rt 寄存器中。 
  
  ==> 分支指令   
-12.	beq  rs,rt,immediate       
+12.	beq  rs,rt,immediate      
+
 110000 |	rs(5 位) |	rt(5 位) 	|immediate(16 位)
 -|-|-|-| 
 功能：if(rs=rt) pc←pc + 4 + (sign-extend)immediate <<2  else pc ←pc + 4   
 特别说明：immediate 是从 PC+4 地址开始和转移到的指令之间指令条数。immediate 符号扩展之后左移 2 位再相加。为什么要左移 2 位？由于跳转到的指令地址肯定是 4 的倍数（每条指令占 4 个字节），最低两位是“00”，因此将 immediate 放进指令码中的时候，是右移了 2 位的，也就是以上说的“指令之间指令条数”。   
-13.	bne  rs,rt,immediate       
+13.	bne  rs,rt,immediate      
+
 110001| 	rs(5 位) |	rt(5 位) 	|immediate(16 位) 
 -|-|-|-|
 功能：if(rs!=rt) pc←pc + 4 + (sign-extend)immediate <<2  else pc ←pc + 4   
 特别说明：与 beq 不同点是，不等时转移，相等时顺序执行。   
-14.	bltz  rs,immediate       
+14.	bltz  rs,immediate     
+
 110010| 	rs(5 位) |	00000 	|immediate(16 位) 
 -|-|-|-|
 功能：if(rs<$zero) pc←pc + 4 + (sign-extend)immediate <<2  else pc ←pc + 4。 
  
 ==>跳转指令   
 （15）j  addr     
+
 |111000 	|addr[27:2]
 -|-| 
 功能：pc <－{(pc+4)[31:28],addr[27:2],2'b00}，无条件跳转。   
@@ -95,6 +108,7 @@ github个人主页: https://starashzero.github.io
  
 ==> 停机指令   
 （16）halt  
+
 111111 |	00000000000000000000000000(26 位) 
 -|-|
 功能：停机；不改变 PC 的值，PC 保持不变。 
@@ -125,7 +139,8 @@ address：为地址。
 ### 图 2  单周期 CPU 数据通路和控制线路图  
 ![](picture\sing-3.jpg)
 图2是一个简单的基本上能够在单周期CPU上完成所要求设计的指令功能的数据通路和必要的控制线路图。其中指令和数据各存储在不同存储器中，即有指令存储器和数据存储器。访问存储器时，先给出内存地址，然后由读或写信号控制操作。对于寄存器组，先给出寄存器地址，读操作时不需要时钟信号，输出端就直接输出相应数据；而在写操作时，在 WE 使能信号为 1 时，在时钟边沿触发将数据写入寄存器。图中控制信号作用如表 1 所示，表 2 是 ALU 运算功能表。   
-### 表 1 控制信号的作用相关部件及引脚说明：   
+### 表 1 控制信号的作用相关部件及引脚说明： 
+
 控制信号名 |	状态“0” |	状态“1” 
 -|-|-|
 Reset |	初始化 PC 为 0 |	PC 接收新地址 
@@ -141,6 +156,7 @@ RegDst |	写寄存器组寄存器的地址，来自 rt字段，相关指令：ad
 ExtSel |	(zero-extend)immediate（0 扩展），相关指令：andi、ori |	(sign-extend)immediate（符号扩展），相关指令：addiu、slti、sw、lw、 beq、bne、bltz 
 PCSrc[1..0]  |	00：pc<－pc+4，相关指令：add、addiu、sub、or、ori、and、andi、 slti、sll、sw、lw、beq(zero=0)、bne(zero=1)、bltz(sign=0)；01：pc<－pc+4+(sign-extend)immediate<<2，相关指令：beq(zero=1)、 bne(zero=0)、bltz(sign=1)； | 10：pc<－{(pc+4)[31:28],addr[27:2],2'b00}，相关指令：j； 11：未用 
 ALUOp[2..0] |	ALU 8 种运算功能选择(000-111)，看功能表 |
+
 ### Instruction Memory：指令存储器，  
 1. Iaddr，指令存储器地址输入端口
 2. IDataIn，指令存储器数据输入端口（指令代码输入端口）  
@@ -166,6 +182,7 @@ ALUOp[2..0] |	ALU 8 种运算功能选择(000-111)，看功能表 |
   3. sign，运算结果标志，结果最高位为 0，则 sign=0，正数；否则，sign=1，负数 
  
 ### 表 2 ALU 运算功能表         
+
 ALUOp[2..0] |	功能 |	描述 
 -|-|-|
  000|	Y = A + B |	加 
@@ -293,6 +310,7 @@ endmodule
 
 ```
 instructionMemory主要用于读取CPU将要执行的指令并进行分析，因此整个部分分为三部分，一读取指令文件，二读取下一条指令，三分析指令的内容。用于CPU测试的指令表如下   
+
 地址 |	汇编程序 |	指令代码 |op（6） |	rs(5) |	rt(5) |	rd(5)/immediate(16) |16 进制数代码 
 -|-|-|-|-|-|-|-|
 0x00000000 |	addiu  $1,$0,8 |	000010 |	00000 |	00001 |0000 0000 0000 1000 |	= 	08010008 
