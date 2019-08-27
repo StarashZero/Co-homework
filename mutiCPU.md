@@ -16,61 +16,62 @@ github个人主页: https://starashzero.github.io
 设计一个多周期 CPU，该 CPU 至少能实现以下指令功能操作。指令与格式如下：   
 ==> 算术运算指令   
 1.	add  rd , rs, rt    
-
+  
 000000 | rs(5 位) | rt(5 位) | rd(5 位) | reserved 
 -|-|-|-|-|
 功能：rd←rs + rt。reserved 为预留部分，即未用，一般填“0”。   
 2.	sub  rd , rs , rt  
-
+  
 000001 | rs(5 位) | rt(5 位) | rd(5 位) | reserved   
 -|-|-|-|-|
 功能：rd←rs - rt。   
 3.	addiu  rt , rs ,immediate 
-
+  
 000010 |rs(5 位)|rt(5 位)|immediate(16 位) 
 -|-|-|-|
 功能：rt←rs + (sign-extend)immediate；immediate 符号扩展再参加“加”运算。 
- 
+   
 ==> 逻辑运算指令   
 4.	andi  rt , rs ,immediate   
-
+  
 010000 |rs(5 位)| 	rt(5 位) 	|immediate(16 位)
 -|-|-|-| 
 功能：rt←rs & (zero-extend)immediate；immediate 做“0”扩展再参加“与”运算。   
 5.	and  rd , rs , rt 
-
+  
 010001| 	rs(5 位)| 	rt(5 位)| 	rd(5 位)| 	reserved 
 -|-|-|-|-|
 功能：rd←rs & rt；逻辑与运算。   
 6.	ori  rt , rs ,immediate   
-
+  
 010010 |rs(5 位) |	rt(5 位) |	immediate(16 位) 
 -|-|-|-|  
 
 功能：rt←rs | (zero-extend)immediate；immediate 做“0”扩展再参加“或”运算。  
-7.	xori  rt , rs , immediate 
-
+7.	xori  rt , rs , immediate   
+   
 010011 |	rs(5 位)| 	rt(5 位)| 	immediate(16 位)
 -|-|-|-|-|   
 
 功能：rt←rs (zero-extend)immediate；immediate 做“0”扩展再参加“异或”运算。 
- 
+   
 ==>移位指令   
-8.	sll  rd, rt,sa  
-
+8.	sll  rd, rt,sa    
+  
 011000|	未用|rt(5 位)|rd(5 位)|sa(5 位)|reserved 
 -|-|-|-|-|-|
 功能：rd<－rt<<(zero-extend)sa，左移 sa 位 ，(zero-extend)sa。 
  
 ==>比较指令   
-9. slti  rt, rs,immediate   带符号数 	
-
+9. slti  rt, rs,immediate   带符号数   	
+  
 100110| 	rs(5 位) |	rt(5 位) 	|immediate(16 位) 	
 -|-|-|-|
 功能：if (rs< (sign-extend)immediate)  rt =1 else  rt=0, 具体请看表 2 ALU 运算功能表，带符号。 
  
 ==> 存储器读/写指令   
-10.	slt  rd, rs, rt          带符号 
+10.	slt  rd, rs, rt          带符号   
+
 100111 |	rs(5 位)| 	rt(5 位) |	rd(5 位)| 	reserved 
 -|-|-|-|-|
 功能：if (rs<rt)  rd =1 else  rd=0, 具体请看表 2 ALU 运算功能表，带符号。  
@@ -80,7 +81,7 @@ github个人主页: https://starashzero.github.io
 -|-|-|-|
 功能：memory[rs+ (sign-extend)immediate]←rt；immediate 符号扩展再相加。即将rt寄存器的内容保存到rs寄存器内容和立即数符号扩展后的数相加作为地址的内存单元中。   
 12. lw  rt , immediate(rs) 读存储器 
-
+  
 110001 |	rs(5 位)| 	rt(5 位) 	|immediate(16 位)
 -|-|-|-| 
 功能：rt ← memory[rs + (sign-extend)immediate]；immediate 符号扩展再相加。 
@@ -89,36 +90,38 @@ github个人主页: https://starashzero.github.io
  
  ==> 分支指令   
 13.	beq  rs,rt,immediate      
-
+  
 110100 |	rs(5 位) |	rt(5 位) 	|immediate(16 位)
 -|-|-|-| 
 功能：if(rs=rt) pc←pc + 4 + (sign-extend)immediate <<2  else pc ←pc + 4   
 特别说明：immediate 是从 PC+4 地址开始和转移到的指令之间指令条数。immediate 符号扩展之后左移 2 位再相加。为什么要左移 2 位？由于跳转到的指令地址肯定是 4 的倍数（每条指令占 4 个字节），最低两位是“00”，因此将 immediate 放进指令码中的时候，是右移了 2 位的，也就是以上说的“指令之间指令条数”。   
 14.	bne  rs,rt,immediate      
-
+   
 110101| 	rs(5 位) |	rt(5 位) 	|immediate(16 位) 
 -|-|-|-|
 功能：if(rs!=rt) pc←pc + 4 + (sign-extend)immediate <<2  else pc ←pc + 4   
 特别说明：与 beq 不同点是，不等时转移，相等时顺序执行。   
 15.	bltz  rs,immediate     
-
+  
 110110| 	rs(5 位) |	00000 	|immediate(16 位) 
 -|-|-|-|
 功能：if(rs<$zero) pc←pc + 4 + (sign-extend)immediate <<2  else pc ←pc + 4。 
  
 ==>跳转指令   
 16. j  addr     
-
+   
 |111000 	|addr[27:2]
 -|-| 
 功能：pc <－{(pc+4)[31:28],addr[27:2],2'b00}，无条件跳转。   
 说明：由于 MIPS32 的指令代码长度占 4 个字节，所以指令地址二进制数最低 2 位均为 0，将指令地址放进指令代码中时，可省掉！这样，除了最高 6 位操作码外，还有 26 位可用于存放地址，事实上，可存放 28 位地址，剩下最高 4 位由 pc+4 最高 4 位拼接上。   
-17. jr  rs     
+17. jr  rs   
+     
 111001 	|rs(5 位) 	|未用 |	未用 |	reserved 
 -|-|-|-|-|
 功能：pc <－ rs，跳转。   
 ==>调用子程序指令   
-18. jal  addr     			
+18. jal  addr    
+
 111010 	|		addr[27:2] 	
 -|-|
 功能：调用子程序，pc <－ {(pc+4)[31:28],addr[27:2],2'b00}；$31<－pc+4，返回地址设置；子程序返回，需用指令 jr $31。跳转地址的形成同 j addr 指令。 
@@ -126,7 +129,7 @@ github个人主页: https://starashzero.github.io
 
 ==> 停机指令   
 19. halt  
-
+  
 111111 |	00000000000000000000000000(26 位) 
 -|-|
 功能：停机；不改变 PC 的值，PC 保持不变。 
@@ -163,7 +166,8 @@ address：为地址。
  
 图4是一个简单的基本上能够在多周期CPU上完成所要求设计的指令功能的数据通路和必要的控制线路图。其中指令和数据各存储在不同存储器中，即有指令存储器和数据存储器。访问存储器时，先给出内存地址，然后由读或写信号控制操作。对于寄存器组，给出寄存器地址（编号），读操作时不需要时钟信号，输出端就直接输出相应数据；而在写操作时，在 WE 使能信号为 1 时，在时钟边沿触发将数据写入寄存器。图中控制信号功能如表 1 所示，表 2 是 ALU 运算功能表。   
 特别提示，图上增加 IR 指令寄存器，目的是使指令代码保持稳定，pc 写使能控制信号PCWre，是确保 pc 适时修改，原因都是和多周期工作的 CPU 有关。ADR、BDR、ALUoutDR、DBDR 四个寄存器不需要写使能信号，其作用是切分数据通路，将大组合逻辑切分为若干个小组合逻辑，大延迟变为多个分段小延迟。   
-表 1 控制信号作用   
+表 1 控制信号作用    
+  
 控制信号名 |	状态“0” |	状态“1”
 -|-|-| 
 RST |	对于 PC，初始化 PC 为程序首地址 |	对于 PC，PC 接收下一条指令地址 
@@ -205,7 +209,8 @@ ALUOp[2..0] 	ALU 8 种运算功能选择(000-111)，看功能表
   2. zero，运算结果标志，结果为 0，则 zero=1；否则 zero=0 
   3. sign，运算结果标志，结果最高位为 0，则 sign=0，正数；否则，sign=1，负数 
          
-表 2 ALU 运算功能表      
+表 2 ALU 运算功能表        
+  
 ALUOp[2..0] |	功能 |	描述 
 -|-|-|
 000 |Y = A + B| 	加 
