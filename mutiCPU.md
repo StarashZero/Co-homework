@@ -168,7 +168,7 @@ address：为地址。
 -|-|-| 
 RST |	对于 PC，初始化 PC 为程序首地址 |	对于 PC，PC 接收下一条指令地址 
 PCWre |	PC 不更改，相关指令：halt，另外，除‘000’状态之外，其余状态慎改 PC 的值。| 	PC 更改，相关指令：除指令 halt 外，另外，在‘000’状态时，修改 PC 的值合适。 
-ALUSrcA |	来自寄存器堆 data1 输出，相关指令：add、sub、addiu、and、andi、 ori、xori、slt、slti、sw、lw、beq、 bne、bltz |	来自移位数 sa，同时，进行(zero-extend)sa，即 {{27{1'b0},sa}}，相关指令：sll 
+ALUSrcA |	来自寄存器堆 data1 输出，相关指令：add、sub、addiu、and、andi、 ori、xori、slt、slti、sw、lw、beq、 bne、bltz |	来自移位数 sa，同时，进行(zero-extend)sa，即 \{\{27\{1'b0\},sa\}\}，相关指令：sll 
 ALUSrcB |	来自寄存器堆 data2 输出，相关指令：add、sub、and、slt、sll、|	来自 sign 或 zero 扩展的立即数，相关指令：addiu、andi、ori、xori、slti、beq、bne、bltz 	lw、sw 
 DBDataSrc |	来自 ALU 运算结果的输出，相关指令：add、sub、addiu、and、andi、 ori、xori、sll、slt、slti |来自数据存储器（Data MEM）的输出，相关指令：lw 
 RegWre |	无写寄存器组寄存器，相关指令： beq、bne、bltz、j、sw、jr、halt 	|寄存器组寄存器写使能，相关指令：add、sub、addiu、and、andi、ori、 xori、sll、slt、slti、lw、jal 
